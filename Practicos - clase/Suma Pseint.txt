@@ -1,0 +1,17 @@
+Algoritmo Suma
+	Definir numero1, numero2, numero3,numero4,numero5 Como Reales
+	Escribir "Introduce un numero 1"
+	Escribir "Introduce un numero 2"
+	Leer numero1, numero2
+	numero3=numero1+numero2
+	numero4=numero3*2
+	numero5=numero3/5
+	Si numero3>100 Entonces
+		Imprimir numero4
+	SiNo 
+		Imprimir numero5
+		
+	Fin Si
+	
+	
+FinAlgoritmo

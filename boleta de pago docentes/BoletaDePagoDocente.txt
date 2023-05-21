@@ -1,0 +1,107 @@
+Algoritmo BoletaDePagoDocente
+	Definir nombre, ci, cargo, horasExtras, anticipo Como Caracter
+	Definir sueldo, numHorasExtras, añosAntiguedad, mesAntiguedad, valorAntiguedad, totalGanado, afp, aporteNacional, numHorasTrabajadas, pagoHorasExtras, totalEgresos, cantAnticipos, liquidoPagable Como Real
+	Definir diaIngreso, mesIngreso, añoIngreso, mesActual, diaActual, añoActual, condicionHorasExtras Como Entero
+	Escribir "Introduzca su nombre completo."
+	Leer nombre
+	Escribir "Introduzca su carnet de Identidad."
+	Leer ci
+	Escribir "¿Cual es su cargo?"
+	Leer cargo
+	Escribir "Introduzca el día, mes y año actual. Ejemplo: dd-mm-yyyy"
+	Leer diaActual, mesActual, añoActual
+	Escribir "¿Introduzca su sueldo mensual"
+	Leer sueldo
+	Escribir "Indique por favor el día, mes y año que ingresó a la empresa. Ejemplo: dd-mm-yyyy"
+	Leer diaIngreso, mesIngreso, añoIngreso
+	añosAntiguedad= añoActual - añoIngreso
+	
+	Si añosAntiguedad = 0 y añosAntiguedad < 2 Entonces
+		valorAntiguedad = 0/100 * 2250 * 3
+	SiNo
+		Si añosAntiguedad >= 2 y añosAntiguedad < 5  Entonces
+			valorAntiguedad = 5/100 * 2250 * 3
+		SiNo
+			Si añosAntiguedad >= 5 y añosAntiguedad < 8 Entonces
+				valorAntiguedad = 11/100 * 2250 * 3
+			SiNo
+				Si añosAntiguedad >= 8 y añosAntiguedad < 11 Entonces
+					valorAntiguedad = 18/100 * 2250 * 3
+				SiNo
+					Si añosAntiguedad >= 11 y añosAntiguedad < 15 Entonces
+						valorAntiguedad = 26/100 * 2250 * 3
+					SiNo
+						Si añosAntiguedad >= 15 y añosAntiguedad < 20 Entonces
+							valorAntiguedad = 34/100 * 2250 * 3
+						SiNo
+							Si añosAntiguedad >= 20 y añosAntiguedad < 25 Entonces
+								valorAntiguedad = 42/100 * 2250 * 3
+							SiNo
+								Si añosAntiguedad >= 25 Entonces
+									valorAntiguedad = 50/100 * 2250 * 3
+								SiNo
+									valorAntiguedad = 0
+								Fin Si
+							Fin Si
+						Fin Si
+					Fin Si
+				Fin Si
+			Fin Si
+		Fin Si
+	Fin Si
+
+	Si sueldo < 13000 Entonces
+		sueldo = 0
+	SiNo
+		Si sueldo < 25000 Entonces
+			aporteNacional = (sueldo - 13000)*(1/100)
+		SiNo
+			Si sueldo < 35000 Entonces
+				aporteNacional = (sueldo - 25000)*(3/100)
+			SiNo
+				Si sueldo > 35000 Entonces
+					aporteNacional = (sueldo - 35000)*(5/100)
+				SiNo
+					aporteNacional = 0
+				Fin Si
+			Fin Si
+		Fin Si
+	Fin Si
+	Escribir "¿Cuantas horas a trabajado en todo el mes sin tener en cuenta las horas extras?"
+	Leer numHorasTrabajadas
+	Escribir "¿Trabajo horas extra?"
+	Leer horasExtras
+	Escribir "¿Cuántas horas extras trabajó?"
+	Leer numHorasExtras
+	Si horasExtras = "si" Entonces
+		Escribir "En qué condiciones fueron esas horas extras,  1: diurno  2: nocturno  3: feriados"
+		Leer condicionHorasExtras
+		Segun condicionHoraExtras Hacer
+			1:
+				pagoHorasExtras = numHorasExtras * (sueldo/numHorasTrabajadas)
+			2:
+				pagoHorasExtras = numHorasExtras * (sueldo/numHorasTrabajadas) * 1.25
+			3:
+				pagoHorasExtras = numHorasExtras * (sueldo/numHorasTrabajadas) * 2
+			De Otro Modo:
+				Escribir "Elija una de las opciones dadas."
+		Fin Segun
+	FinSi
+	
+	Imprimir "Su pago por las horas extras es de ", pagoHorasExtras
+	totalGanado = sueldo + valorAntiguedad + pagoHorasExtras
+	Imprimir "Su total Ganado es ", totalGanado, " bs"
+	Escribir "¿Le otorgaron algun anticipo?"
+	Leer anticipo
+	Si anticipo = "si" Entonces
+		Escribir "¿Que cantidad le anticiparon?"
+		Leer cantAnticipos
+	SiNo
+		cantAnticipos = 0
+	Fin Si
+	afp = (12.71/100) * totalGanado 
+	totalEgresos = afp + cantAnticipos + aporteNacional
+	Imprimir "Sus egresos totales son de ", totalEgresos " bs."
+	liquidoPagable = totalGanado - totalEgresos
+	Imprimir nombre, " con cargo ",cargo " y carnet de identidad ", ci " su liquido pagable es de ",liquidoPagable " bs."
+FinAlgoritmo

@@ -1,0 +1,69 @@
+Funcion valSeno <- senoDe (numerofinal)
+	valSeno= sen(numerofinal)
+	
+Fin Funcion
+
+Funcion variableForm <- formula ( numFinal )
+	numeroTexto=ConvertirATexto(numFinal)
+	primeraPosicion=Subcadena(numeroTexto,1,1)
+	cantidadTexto=Longitud(numeroTexto)
+	ultimaPosicion=Subcadena(numeroTexto,cantidadTexto,cantidadTexto)
+	calculoup=ConvertirANumero(ultimaPosicion)*pi
+	posicionMedio=subcadena(numeroTexto,cantidadTexto-1,cantidadTexto)
+	posicionMedio2=subcadena(numeroTexto,2,2)
+	posicionMedio3=subcadena(numeroTexto,cantidadTexto-1,cantidadTexto)
+	posicionMedioImpar=subcadena(numeroTexto,(cantidadTexto/2)+(cantidadTexto mod 2),(cantidadTexto/2)+(cantidadTexto mod 2))
+	variableForm=ConvertirANumero(primeraPosicion)
+	
+Fin Funcion
+
+Funcion numAle <- aleatoria(numeroMayor,sumatoria)
+	numAleatorio = ALEATORIO(1,2)
+    Si numAleatorio = 1 Entonces
+        numAle = sumatoria
+    Sino
+        numAle = numeroMayor
+    FinSi
+FinFuncion
+
+Funcion sumatoria <- sumaNumeros(num1,num2,num3)
+	sumatoria=num1+num2+num3
+Fin Funcion
+
+Funcion raizCuadrada <- raizAle(numero)
+	raizCuadrada=RC(numero)
+Fin Funcion
+
+Funcion numeroMayor <- numeroMayor3 (num1,num2,num3)
+	Si (num1>num2 y num1>num3) Entonces
+		numeroMayor=num1
+	SiNo
+		Si (num2>num1 y num2>num3)
+			numeroMayor=num2
+		SiNo
+			Si (num3>num1 y num3>num2)
+				numeroMayor=num3
+			FinSi
+		FinSi
+	Fin Si
+Fin Funcion
+
+
+
+Algoritmo ProgramaProfesor
+	Definir num1,num2,num3 Como real
+	Escribir "Ingrese tres números"
+	Leer num1
+	Leer num2
+	Leer num3
+	numMayor=numeroMayor3(num1,num2,num3)
+	suma=sumaNumeros(num1,num2,num3)
+	numAle=aleatoria(numMayor,suma)
+	numerofinal=formula(numFinal)
+	Imprimir "EL resultado de la sumatoria es: ",suma
+	Imprimir"El número mayor es: ",numMayor
+	Imprimir"El resultado de la fórmula es: ",formula(numFinal )
+	Imprimir"EL resultado de la raiz es: ",raizAle(numerofinal)
+	Imprimir"En funcion de seno es: ",senoDe(numerofinal)
+
+FinAlgoritmo

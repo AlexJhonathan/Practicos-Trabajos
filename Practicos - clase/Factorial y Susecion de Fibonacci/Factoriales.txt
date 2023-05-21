@@ -1,0 +1,29 @@
+Algoritmo Factoriales
+	definir num,factorial como reales
+	definir desarrollo como caracter
+	escribir "Introduzca un numero positivo para calcular su factorial."
+	leer num
+	
+	Mientras num<0 Hacer
+		escribir "ERROR: Solo numeros positivos."
+		leer num
+	Fin Mientras
+	
+	factorial=1
+	desarrollo= " "
+	
+	Si num=0 Entonces
+		escribir "El factorial de 0 es: 1"
+	SiNo
+		Para x=num Hasta 1 Con Paso -1 Hacer
+			factorial=factorial*x
+			Si x>1 Entonces
+				desarrollo=desarrollo+ConvertirATexto(x)+"x"
+			SiNo
+				desarrollo=desarrollo+ConvertirATexto(x)
+			Fin Si
+		Fin Para
+		imprimir "El factorial de ",num " es:",desarrollo " = ",factorial
+	Fin Si
+	
+FinAlgoritmo

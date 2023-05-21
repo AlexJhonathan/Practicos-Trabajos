@@ -1,0 +1,55 @@
+Funcion susecionfibo <- fibonacci ( numero )
+	val1=0
+	val2=1
+	Para x=1 Hasta numero Con Paso 1 Hacer
+		suma=val1+val2
+		Si numero=suma Entonces
+			cont=cont+1
+		Fin Si
+		val1=val2
+		val2=suma
+	Fin Para
+	Si cont=1 Entonces
+		escribir "Es Fibonacci."
+	SiNo
+		escribir "No es Fibonacci."
+	Fin Si
+	
+Fin Funcion
+
+Funcion numeroPrimo <- funprimo ( numero )
+	cont=0
+	Para x=1 Hasta numero con paso 1 Hacer
+		Si numero mod x = 0 Entonces
+			cont=cont+1
+		Fin Si
+	FinPara
+	Si cont=2 Entonces
+		escribir "Es primo."
+	SiNo
+		escribir "No es primo."
+	Fin Si
+	
+Fin Funcion
+
+Funcion Paroimpar <- funparoimpar ( numero )
+	Si numero mod 2 = 0 Entonces
+		escribir "El numero es un numero par."
+	SiNo
+		Escribir "El numero es un numero impar."
+	Fin Si
+	
+Fin Funcion
+
+Algoritmo algoritmoNumeros
+	definir numero Como Real
+	escribir "Introduzca un numero para verificar que es un numero par, primo o de la sucesion de Fibonacci."
+	Leer numero
+	
+	Esparoimpar=funparoimpar( numero )
+	
+	valprimo=funprimo( numero )
+	
+	fibo=fibonacci( numero )
+	
+FinAlgoritmo

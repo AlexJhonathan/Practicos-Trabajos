@@ -1,0 +1,14 @@
+Algoritmo EntrarAUnaDiscoteca
+	Definir nombre Como Caracter
+	Definir año, edad Como Entero
+	Escribir "Buenas noches, para pasar a la discoteca necesito algunos datos, ¿Cual es su nombre?"
+	Leer nombre
+	Escribir "¿Cual es su año de nacimiento"
+	Leer año
+	edad=2023-año
+	Si edad>18 Entonces
+		Imprimir nombre, ", Usted es mayor de edad, puede pasar."
+	SiNo
+		Imprimir nombre, ", Usted no es mayor de edad, no puede pasar."
+	Fin Si
+FinAlgoritmo

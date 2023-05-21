@@ -1,0 +1,6 @@
+Algoritmo ProgramaHolaMundo
+	Definir nombre Como Caracter
+	Escribir "Escriba su Nombre"
+	Leer nombre
+	Imprimir "Hola mundo, ",nombre
+FinAlgoritmo

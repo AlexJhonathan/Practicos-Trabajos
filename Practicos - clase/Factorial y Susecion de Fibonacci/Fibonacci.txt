@@ -1,0 +1,20 @@
+Algoritmo Fibonacci
+	definir num,m,n como reales
+	escribir "Introduzca la cantidad de numeros que desea generar de la susecion de Fibonacci."
+	leer num
+	x=1
+	m=0
+	n=1
+	Mientras x<=num Hacer
+		Si x mod 2 = 1 Entonces
+			escribir m
+			m=m+n
+		SiNo
+			escribir n
+			n=n+m
+		Fin Si
+		x=x+1
+	Fin Mientras
+	
+	
+FinAlgoritmo
